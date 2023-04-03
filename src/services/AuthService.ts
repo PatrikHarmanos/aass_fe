@@ -5,11 +5,11 @@ import { useAuthStore } from '../stores/auth-store';
 
 class AuthService {
   async register(data: RegisterData): Promise<any> {
-    const response = await api.post<any>('api/v1/auth/register', data);
+    const response = await api.post<any>('api/auth/register', data);
     console.log(response);
   }
 
-  async login(data: LoginData): Promise<AuthResponse> {
+  async login(data: LoginData): Promise<any> {
     const authStore = useAuthStore();
     return await api
       .post<any>('api/auth/login', JSON.stringify(data))

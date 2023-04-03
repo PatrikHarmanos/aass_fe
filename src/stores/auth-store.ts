@@ -21,7 +21,6 @@ export const useAuthStore = defineStore('authStore', {
     },
     async login(data: LoginData) {
       return AuthService.login(data).then((response) => {
-        console.log(response);
         this.user = response;
         this.isAdmin = response.user.is_admin;
         // set Bearer token to local storage
@@ -33,7 +32,7 @@ export const useAuthStore = defineStore('authStore', {
     async me() {
       return AuthService.me().then((response) => {
         this.user = response.data;
-        this.isAdmin = response.data.user.is_admin;
+        this.isAdmin = response.data.is_admin;
         // this.isAdmin = response.user.is_admin ? response.user.is_admin : false;
         return response.Authenticated;
       });

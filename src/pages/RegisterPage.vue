@@ -179,8 +179,8 @@ function checkData() {
   // password_ok.value = checkPassword();
 
   let data = {
-    first_name: name.value,
-    last_name: surname.value,
+    name: name.value + surname.value,
+    is_admin: true,
     email: email.value,
     password: password.value,
     password_confirmation: password_verify.value,
